@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Recipe Finder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Header Section -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <h1>Meal Recipe Finder</h1>
+            </div>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <div class="toggle-ball"></div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Find Delicious Recipes</h2>
+                <p>Discover thousands of recipes from around the world</p>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search for recipes...">
+                    <button id="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <div class="filter-container">
+                <div class="filter-item active" data-filter="search">
+                    <i class="fas fa-search"></i>
+                    <span>Search</span>
+                </div>
+                <div class="filter-item" data-filter="category">
+                    <i class="fas fa-list"></i>
+                    <span>Categories</span>
+                </div>
+                <div class="filter-item" data-filter="ingredient">
+                    <i class="fas fa-carrot"></i>
+                    <span>Ingredients</span>
+                </div>
+                <div class="filter-item" data-filter="random">
+                    <i class="fas fa-dice"></i>
+                    <span>Random</span>
+                </div>
+                <div class="filter-item" data-filter="favorites">
+                    <i class="fas fa-heart"></i>
+                    <span>Favorites</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Filter Options -->
+        <section class="category-options filter-options" style="display: none;">
+            <h3>Categories</h3>
+            <div class="category-list" id="category-list">
+                <!-- Categories will be dynamically added here -->
+                <div class="loading-spinner"><div></div><div></div><div></div><div></div></div>
+            </div>
+        </section>
+
+        <!-- Ingredient Filter Options -->
+        <section class="ingredient-options filter-options" style="display: none;">
+            <h3>Main Ingredients</h3>
+            <div class="ingredient-search">
+                <input type="text" id="ingredient-search-input" placeholder="Search ingredients...">
+            </div>
+            <div class="ingredient-list" id="ingredient-list">
+                <!-- Ingredients will be dynamically added here -->
+                <div class="loading-spinner"><div></div><div></div><div></div><div></div></div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section">
+            <h2 id="results-title">Popular Recipes</h2>
+            <div class="results-container" id="results-container">
+                <!-- Recipe cards will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Recipe Modal -->
+        <div class="modal" id="recipe-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-body" id="modal-body">
+                    <!-- Recipe details will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- No Results Message -->
+        <div class="no-results" id="no-results" style="display: none;">
+            <i class="fas fa-search"></i>
+            <h3>No recipes found</h3>
+            <p>Try another search term or filter</p>
+        </div>
+
+        <!-- Loading Animation -->
+        <div class="loading" id="loading" style="display: none;">
+            <div class="loading-spinner">
+                <div></div><div></div><div></div><div></div>
+            </div>
+            <p>Looking for delicious recipes...</p>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Meal Recipe Finder | Powered by <a href="https://www.themealdb.com/api.php" target="_blank">TheMealDB API</a></p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>
